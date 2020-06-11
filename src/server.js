@@ -2,10 +2,13 @@ import graphqlHTTP from 'express-graphql';
 import express from 'express';
 import { MongoClient } from 'mongodb';
 import assert from 'assert';
+import cors from 'cors';
 import mySchema from './schema/main';
 
 const app = express();
 const port = 3000;
+
+app.use(cors());
 
 const MONGO_URL = 'mongodb://localhost:27017/graphql-project-fuq';
 
